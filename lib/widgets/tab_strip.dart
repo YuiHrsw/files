@@ -26,8 +26,15 @@ class TabStrip extends StatelessWidget {
     return SizedBox.expand(
       child: Row(
         children: [
+          Container(
+            padding: const EdgeInsets.only(left: 2, top: 8),
+            child: IconButton(
+              onPressed: onNewTab,
+              icon: const Icon(Icons.add),
+            ),
+          ),
           Expanded(
-            child: ListView.separated(
+            child: ListView.builder(
               itemBuilder: (context, index) => ContextMenu(
                 openOnLongPress: false,
                 entries: [
@@ -50,14 +57,10 @@ class TabStrip extends StatelessWidget {
                 ),
               ),
               scrollDirection: Axis.horizontal,
-              separatorBuilder: (context, index) => const SizedBox(width: 8),
+              // separatorBuilder: (context, index) => const SizedBox(width: 8),
               itemCount: tabs.length,
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.only(top: 8, left: 8, right: 8),
             ),
-          ),
-          IconButton(
-            onPressed: onNewTab,
-            icon: const Icon(Icons.add),
           ),
         ],
       ),
@@ -108,10 +111,13 @@ class _TabState extends State<_Tab> {
       height: double.infinity,
       child: Material(
         color: widget.selected
-            ? Theme.of(context).colorScheme.surface
-            : Theme.of(context).colorScheme.background,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
+            ? Theme.of(context).colorScheme.background
+            : Theme.of(context).colorScheme.primaryContainer,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(16),
+            topRight: Radius.circular(16),
+          ),
         ),
         clipBehavior: Clip.antiAlias,
         child: InkWell(

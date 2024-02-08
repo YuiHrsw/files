@@ -64,7 +64,7 @@ class Utils {
         ? folderProvider.getIconForType(builtinFolder.type)
         : null;
 
-    return builtinFolderIcon ?? Icons.folder;
+    return builtinFolderIcon ?? Icons.folder_open;
   }
 
   static String getEntityName(String path) {

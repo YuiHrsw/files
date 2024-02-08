@@ -75,9 +75,12 @@ class _BreadcrumbsBarState extends State<BreadcrumbsBar> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Material(
-                    color: Theme.of(context).colorScheme.surface,
+                    color: Theme.of(context)
+                        .colorScheme
+                        .primaryContainer
+                        .withOpacity(0.5),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
+                      borderRadius: BorderRadius.circular(16),
                     ),
                     clipBehavior: Clip.antiAlias,
                     child: _LoadingIndicator(
@@ -150,7 +153,7 @@ class _BreadcrumbsBarState extends State<BreadcrumbsBar> {
         );
       }
 
-      return ListView.separated(
+      return ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           final bool isInsideBuiltin = builtinFolder != null &&
@@ -174,7 +177,7 @@ class _BreadcrumbsBarState extends State<BreadcrumbsBar> {
           );
         },
         itemCount: actualParts.length,
-        separatorBuilder: (context, index) => const VerticalDivider(width: 2),
+        // separatorBuilder: (context, index) => const VerticalDivider(width: 2),
       );
     }
   }

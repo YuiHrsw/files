@@ -129,15 +129,15 @@ class SideDestination {
 }
 
 const Map<FolderType, IconData> _icons = {
-  FolderType.home: Icons.home_filled,
-  FolderType.desktop: Icons.desktop_windows,
-  FolderType.documents: Icons.note_outlined,
+  FolderType.home: Icons.folder_shared_outlined,
+  FolderType.desktop: Icons.desktop_windows_outlined,
+  FolderType.documents: Icons.library_books_outlined,
   FolderType.pictures: Icons.photo_library_outlined,
   FolderType.download: Icons.file_download,
-  FolderType.videos: Icons.videocam_outlined,
-  FolderType.music: Icons.music_note_outlined,
-  FolderType.publicShare: Icons.public_outlined,
-  FolderType.templates: Icons.file_copy_outlined,
+  FolderType.videos: Icons.video_library_outlined,
+  FolderType.music: Icons.library_music_outlined,
+  FolderType.publicShare: Icons.language,
+  FolderType.templates: Icons.snippet_folder_outlined,
 };
 
 String windowsFolderToString(WindowsFolder folder) {

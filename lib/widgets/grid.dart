@@ -199,7 +199,7 @@ class Cell extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         DefaultTextStyle(
-          style: const TextStyle(fontSize: 14),
+          style: const TextStyle(fontSize: 14, color: Colors.black),
           overflow: TextOverflow.ellipsis,
           maxLines: 1,
           textAlign: TextAlign.center,

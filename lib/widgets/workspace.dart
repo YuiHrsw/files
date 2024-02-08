@@ -293,7 +293,7 @@ class _FilesWorkspaceState extends State<FilesWorkspace> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
-              Icons.folder_open_outlined,
+              Icons.folder_open,
               size: 80,
             ),
             Text(
@@ -420,7 +420,7 @@ class _WorkspaceTopbar extends StatelessWidget {
           icon: const Icon(
             Icons.arrow_upward,
             size: 20,
-            color: Colors.white,
+            // color: Colors.white,
           ),
           onPressed: () {
             final PathParts backDir = PathParts.parse(controller.currentDir);
@@ -436,7 +436,7 @@ class _WorkspaceTopbar extends StatelessWidget {
           icon: Icon(
             viewIcon,
             size: 20,
-            color: Colors.white,
+            // color: Colors.white,
           ),
           onPressed: () {
             switch (controller.view) {
@@ -478,7 +478,7 @@ class _WorkspaceTopbar extends StatelessWidget {
         return Icons.grid_view_outlined;
       case WorkspaceView.table:
       default:
-        return Icons.list_outlined;
+        return Icons.view_list_outlined;
     }
   }
 }

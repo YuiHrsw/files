@@ -36,29 +36,33 @@ class Files extends StatelessWidget {
     return MaterialApp(
       title: 'Files',
       theme: ThemeData(
-        colorScheme: const ColorScheme(
-          primary: Colors.deepOrange,
-          secondary: Colors.deepOrange,
-          background: Color(0xFF161616),
-          surface: Color(0xFF212121),
-          error: Colors.red,
-          onPrimary: Colors.white,
-          onSecondary: Colors.white,
-          onBackground: Colors.white,
-          onSurface: Colors.white,
-          onError: Colors.white,
+        // colorScheme: const ColorScheme(
+        //   primary: Colors.deepOrange,
+        //   secondary: Colors.deepOrange,
+        //   background: Color(0xFF161616),
+        //   surface: Color(0xFF212121),
+        //   error: Colors.red,
+        //   onPrimary: Colors.white,
+        //   onSecondary: Colors.white,
+        //   onBackground: Colors.white,
+        //   onSurface: Colors.white,
+        //   onError: Colors.white,
+        //   brightness: Brightness.dark,
+        // ),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
           brightness: Brightness.dark,
         ),
-        scrollbarTheme: ScrollbarThemeData(
-          thumbVisibility: const MaterialStatePropertyAll(true),
-          trackVisibility: MaterialStateProperty.resolveWith(
-            (states) => states.contains(MaterialState.hovered),
-          ),
-          trackBorderColor: MaterialStateProperty.all(Colors.transparent),
-          crossAxisMargin: 0,
-          mainAxisMargin: 0,
-          radius: Radius.zero,
-        ),
+        // scrollbarTheme: ScrollbarThemeData(
+        //   thumbVisibility: const MaterialStatePropertyAll(true),
+        //   trackVisibility: MaterialStateProperty.resolveWith(
+        //     (states) => states.contains(MaterialState.hovered),
+        //   ),
+        //   trackBorderColor: MaterialStateProperty.all(Colors.transparent),
+        //   crossAxisMargin: 0,
+        //   mainAxisMargin: 0,
+        //   radius: Radius.zero,
+        // ),
         menuTheme: const MenuThemeData(
           style: MenuStyle(
             padding: MaterialStatePropertyAll(
@@ -106,11 +110,12 @@ class _FilesHomeState extends State<FilesHome> {
         ),
         Expanded(
           child: Material(
-            color: Theme.of(context).colorScheme.background,
+            // color: Theme.of(context).colorScheme.background,
             child: Column(
               children: [
-                SizedBox(
-                  height: 56,
+                Container(
+                  color: Theme.of(context).colorScheme.primaryContainer,
+                  height: 48,
                   child: TabStrip(
                     tabs: workspaces,
                     selectedTab: currentWorkspace,
